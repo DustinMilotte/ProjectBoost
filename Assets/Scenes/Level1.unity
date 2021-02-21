@@ -130,6 +130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 110726344}
+  - component: {fileID: 110726346}
   - component: {fileID: 110726345}
   m_Layer: 0
   m_Name: VictorOladipoRocket
@@ -168,6 +169,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb3d862f931243088a63305fe537fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thrustPower: 800
+--- !u!54 &110726346
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110726343}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0.2
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
