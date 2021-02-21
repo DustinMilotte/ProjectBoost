@@ -26,7 +26,9 @@ public class Rocket : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+
+
+    { 
         Thrust();
         
         // if the A key is pressed
@@ -44,6 +46,27 @@ public class Rocket : MonoBehaviour
         }
     }
 
+
+    private void Rotate()
+    {
+        // if the A key is pressed
+
+        // Rotate the rocket counterclockwise
+
+        // if the D key is pressed
+
+        // Rotate the rocket clockwise
+
+        if (Input.GetKey(KeyCode.A))
+        {
+
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+
+        }
+
+    }
     private void Thrust()
     {
         // if the space bar is pressed
