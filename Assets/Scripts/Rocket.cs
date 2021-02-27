@@ -8,7 +8,7 @@ public class Rocket : MonoBehaviour
     // This is where we will list the public and private variables for the Rocket class
     
     public float thrustPower;
-    
+
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
     private Quaternion startingRotation;
@@ -26,22 +26,13 @@ public class Rocket : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-
-
     { 
+        // apply thrust and rotation on each frame
         Thrust();
+        Rotate();
         
-        // if the A key is pressed
-        
-            // Rotate the rocket counterclockwise
-            
-        // if the D key is pressed
-        
-            // Rotate the rocket clockwise
-            
-        // if the R key is pressed
         if (Input.GetKeyDown(KeyCode.R))
-        {
+        {        
             ResetRocket();
         }
     }
@@ -50,23 +41,20 @@ public class Rocket : MonoBehaviour
     private void Rotate()
     {
         // if the A key is pressed
-
-        // Rotate the rocket counterclockwise
-
-        // if the D key is pressed
-
-        // Rotate the rocket clockwise
-
         if (Input.GetKey(KeyCode.A))
         {
-
+            // Rotate the rocket counterclockwise
+            transform.Rotate(Vector3.forward * (Time.deltaTime));
         }
+        
+        // if the D key is pressed
         if (Input.GetKey(KeyCode.D))
         {
+            // Rotate the rocket clockwise
 
         }
-
     }
+    
     private void Thrust()
     {
         // if the space bar is pressed
@@ -79,7 +67,6 @@ public class Rocket : MonoBehaviour
 
     private void ResetRocket()
     {
-        
         // reset the rocket's position and rotation to where it started
         transform.position = startingPosition;
         transform.localRotation = startingRotation;
