@@ -8,6 +8,7 @@ public class Rocket : MonoBehaviour
     // This is where we will list the public and private variables for the Rocket class
     
     public float thrustPower;
+    public float turnspeed;
 
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
@@ -44,14 +45,14 @@ public class Rocket : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             // Rotate the rocket counterclockwise
-            transform.Rotate(Vector3.forward * (Time.deltaTime));
+            transform.Rotate(Vector3.forward * (Time.deltaTime) * turnspeed);
         }
         
         // if the D key is pressed
         if (Input.GetKey(KeyCode.D))
         {
             // Rotate the rocket clockwise
-
+            transform.Rotate(-Vector3.forward * (Time.deltaTime) * turnspeed);
         }
     }
     
