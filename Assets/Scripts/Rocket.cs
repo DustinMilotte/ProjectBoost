@@ -6,7 +6,7 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     // This is where we will list the public and private variables for the Rocket class
-    
+
     public float thrustPower;
     public float turnspeed;
 
@@ -27,43 +27,51 @@ public class Rocket : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    { 
+    {
         // apply thrust and rotation on each frame
         Thrust();
         Rotate();
-        
+
         if (Input.GetKeyDown(KeyCode.R))
-        {        
+        {
             ResetRocket();
         }
     }
 
+    private void Thrust()
+    {
+        // if the space bar is pressed currently, GetKey will run on every frame that the key is down
+        if (Input.GetKey(KeyCode.Space))
+        {
+            // apply upward force to our rocket by using the "AddRelativeForce" method on it's rigidbody
+            christanWoodRigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * thrustPower);
+        }
+
+        // if the space bar went down this frame start playing the engine sound, GetKeyDown will run only on the exact frame the key went down
+
+        // else if the space bar came up this frame stop playing the engine sound, GeyKeyUp will run on the frame the key came up
+        
+    }
 
     private void Rotate()
     {
+        christanWoodRigidbody.freezeRotation = true;
+
         // if the A key is pressed
         if (Input.GetKey(KeyCode.A))
         {
             // Rotate the rocket counterclockwise
             transform.Rotate(Vector3.forward * (Time.deltaTime) * turnspeed);
         }
-        
+
         // if the D key is pressed
         if (Input.GetKey(KeyCode.D))
         {
             // Rotate the rocket clockwise
             transform.Rotate(-Vector3.forward * (Time.deltaTime) * turnspeed);
         }
-    }
-    
-    private void Thrust()
-    {
-        // if the space bar is pressed
-        if (Input.GetKey(KeyCode.Space))
-        {
-            // apply upward force to our rocket by using the "AddRelativeForce" method on it's rigidbody
-            christanWoodRigidbody.AddRelativeForce(Vector3.up * Time.deltaTime * thrustPower);
-        }
+
+        christanWoodRigidbody.freezeRotation = false;
     }
 
     private void ResetRocket()
