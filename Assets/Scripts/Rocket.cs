@@ -13,6 +13,7 @@ public class Rocket : MonoBehaviour
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
     private Quaternion startingRotation;
+    private AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,7 @@ public class Rocket : MonoBehaviour
 
         // get a reference to the rigidbody component attached to the rocket and store it in our christianWoodRigidbody variable
         christanWoodRigidbody = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,7 +50,10 @@ public class Rocket : MonoBehaviour
         }
 
         // if the space bar went down this frame start playing the engine sound, GetKeyDown will run only on the exact frame the key went down
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            audioSource.Play();
+        }
         // else if the space bar came up this frame stop playing the engine sound, GeyKeyUp will run on the frame the key came up
         
     }
