@@ -55,7 +55,10 @@ public class Rocket : MonoBehaviour
             audioSource.Play();
         }
         // else if the space bar came up this frame stop playing the engine sound, GeyKeyUp will run on the frame the key came up
-        
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            audioSource.Stop();
+        }
     }
 
     private void Rotate()
