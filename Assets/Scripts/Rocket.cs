@@ -40,6 +40,11 @@ public class Rocket : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision other)
+    {
+        
+    }
+
     private void Thrust()
     {
         // if the space bar is pressed currently, GetKey will run on every frame that the key is down

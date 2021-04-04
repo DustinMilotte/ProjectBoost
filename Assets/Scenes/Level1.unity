@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 366106315}
   m_Layer: 0
   m_Name: TylerHerrogoal
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -762,7 +762,7 @@ GameObject:
   - component: {fileID: 1353755454}
   m_Layer: 0
   m_Name: Terrain
-  m_TagString: Untagged
+  m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -857,7 +857,7 @@ GameObject:
   - component: {fileID: 1509628117}
   m_Layer: 0
   m_Name: Launchpad
-  m_TagString: Untagged
+  m_TagString: Friendly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
