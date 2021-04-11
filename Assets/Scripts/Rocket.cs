@@ -42,7 +42,15 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        
+        if (other.gameObject.tag == "goal")
+        {
+            //move to the next level 
+        }
+        else if (other.gameObject.tag == "damage")
+        {
+            //restart current level
+        }
+            
     }
 
     private void Thrust()
