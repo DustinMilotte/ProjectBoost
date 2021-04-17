@@ -6,9 +6,9 @@ using UnityEngine;
 public class Rocket : MonoBehaviour
 {
     // This is where we will list the public and private variables for the Rocket class
-
     public float thrustPower;
     public float turnspeed;
+    public ColorChanger colorChanger;
 
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
@@ -25,6 +25,9 @@ public class Rocket : MonoBehaviour
         // get a reference to the rigidbody component attached to the rocket and store it in our christianWoodRigidbody variable
         christanWoodRigidbody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        
+        // example of using a public method on another class, this won't work if the method is private
+        // colorChanger.ChangeColor();
     }
 
     // Update is called once per frame
@@ -42,13 +45,15 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "goal")
+        if (other.gameObject.CompareTag("Goal"))
         {
             //move to the next level 
+            print("hit goal");
         }
-        else if (other.gameObject.tag == "damage")
+        else if (other.gameObject.CompareTag("Damage"))
         {
             //restart current level
+            print("hit damage object");
         }
             
     }
