@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
@@ -49,6 +50,7 @@ public class Rocket : MonoBehaviour
         {
             //move to the next level 
             print("hit goal");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         else if (other.gameObject.CompareTag("Damage"))
         {
