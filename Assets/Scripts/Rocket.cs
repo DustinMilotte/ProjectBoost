@@ -50,12 +50,13 @@ public class Rocket : MonoBehaviour
         {
             //move to the next level 
             print("hit goal");
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else if (other.gameObject.CompareTag("Damage"))
         {
             //restart current level
             print("hit damage object");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
             
     }
