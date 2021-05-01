@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
+        // call the display new level function
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        // clear the message after a brief time
     }
     
-    // 
+    
+    // write a function that will display the current level
+    
+    // write a function that will clear the center message text
+    
 }
