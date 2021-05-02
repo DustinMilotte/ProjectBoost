@@ -10,6 +10,8 @@ public class Rocket : MonoBehaviour
     public float thrustPower;
     public float turnspeed;
     public ColorChanger colorChanger;
+    public ParticleSystem successParticles;
+    public ParticleSystem explosionParticles; 
     
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
@@ -50,12 +52,14 @@ public class Rocket : MonoBehaviour
         {
             //move to the next level 
             print("hit goal");
+            successParticles.Play();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else if (other.gameObject.CompareTag("Damage"))
         {
             //restart current level
             print("hit damage object");
+            explosionParticles.Play();
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
