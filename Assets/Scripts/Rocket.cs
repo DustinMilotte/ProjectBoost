@@ -10,7 +10,7 @@ public class Rocket : MonoBehaviour
     public float thrustPower;
     public float turnspeed;
     public ColorChanger colorChanger;
-
+    
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
     private Quaternion startingRotation;
@@ -58,7 +58,6 @@ public class Rocket : MonoBehaviour
             print("hit damage object");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-            
     }
 
     private void Thrust()

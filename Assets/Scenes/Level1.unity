@@ -1602,6 +1602,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48542c09032c0cd4dbe98cc8ceaebb43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelBaseText: 'Level '
+  centerMessage: {fileID: 1232841779}
+  messageDisplayTime: 3
 --- !u!4 &1904546778
 Transform:
   m_ObjectHideFlags: 0
