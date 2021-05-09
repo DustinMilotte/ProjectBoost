@@ -53,8 +53,8 @@ public class Rocket : MonoBehaviour
         {
             //move to the next level 
             print("hit goal");
-            successParticles.Play();
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            StartSuccessSequence();
+            
         }
         else if (other.gameObject.CompareTag("Damage"))
         {
@@ -64,7 +64,15 @@ public class Rocket : MonoBehaviour
             
         }
     }
-
+    private void StartSuccessSequence()
+    {
+        successParticles.Play();
+        Invoke("LoadNextLevel", levelLoadDelay);
+    }
+    private void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     private void StartCrashSequence()
     {
         explosionParticles.Play();
