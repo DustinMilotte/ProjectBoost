@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4514004, g: 0.5008931, b: 0.57231724, a: 1}
+  m_IndirectSpecularColor: {r: 0.45140117, g: 0.5008937, b: 0.5723182, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -178,7 +178,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thrustPower: 100
   turnspeed: 50
+  levelLoadDelay: 3
   colorChanger: {fileID: 110726348}
+  successParticles: {fileID: 0}
+  explosionParticles: {fileID: 514608447}
 --- !u!54 &110726346
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -652,6 +655,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379301016}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!198 &514608447 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 286789679}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &521851772
 GameObject:
   m_ObjectHideFlags: 0
