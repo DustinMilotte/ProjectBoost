@@ -13,6 +13,8 @@ public class Rocket : MonoBehaviour
     public ColorChanger colorChanger;
     public ParticleSystem successParticles;
     public ParticleSystem explosionParticles;
+    public ParticleSystem rightsideParticles;
+    public ParticleSystem leftsideParticles;
 
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
@@ -109,12 +111,17 @@ public class Rocket : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             audioSource.Play();
+            leftsideParticles.Play();
+            rightsideParticles.Play();
         }
         // else if the space bar came up this frame stop playing the engine sound, GeyKeyUp will run on the frame the key came up
         else if (Input.GetKeyUp(KeyCode.Space))
         {
             audioSource.Stop();
+            leftsideParticles.Stop();
+            rightsideParticles.Stop();
         }
+
     }
 
     private void Rotate()
