@@ -12,12 +12,13 @@ public class Rocket : MonoBehaviour
     public float levelLoadDelay;
     public ColorChanger colorChanger;
     public ParticleSystem successParticles;
-    public ParticleSystem explosionParticles; 
-    
+    public ParticleSystem explosionParticles;
+
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
     private Quaternion startingRotation;
     private AudioSource audioSource;
+    private bool sequenceHasStarted;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class Rocket : MonoBehaviour
         // get a reference to the rigidbody component attached to the rocket and store it in our christianWoodRigidbody variable
         christanWoodRigidbody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
-        
+
         // example of using a public method on another class, this won't work if the method is private
         // colorChanger.ChangeColor();
     }
@@ -53,29 +54,40 @@ public class Rocket : MonoBehaviour
         {
             //move to the next level 
             print("hit goal");
-            StartSuccessSequence();
-            
+
+            if (sequenceHasStarted == false)
+            {
+                StartSuccessSequence();
+            }
         }
         else if (other.gameObject.CompareTag("Damage"))
         {
             //restart current level
             print("hit damage object");
-            StartCrashSequence();
-            
+
+            if (sequenceHasStarted == false)
+            {
+                StartCrashSequence();
+            }
         }
     }
+
     private void StartSuccessSequence()
     {
         successParticles.Play();
+        sequenceHasStarted = true;
         Invoke("LoadNextLevel", levelLoadDelay);
     }
+
     private void LoadNextLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+
     private void StartCrashSequence()
     {
         explosionParticles.Play();
+        sequenceHasStarted = true;
         Invoke("ResetLevel", levelLoadDelay);
     }
 
