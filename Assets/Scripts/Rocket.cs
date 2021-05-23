@@ -54,9 +54,6 @@ public class Rocket : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Goal"))
         {
-            //move to the next level 
-            print("hit goal");
-
             if (sequenceHasStarted == false)
             {
                 StartSuccessSequence();
@@ -64,9 +61,6 @@ public class Rocket : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("Damage"))
         {
-            //restart current level
-            print("hit damage object");
-
             if (sequenceHasStarted == false)
             {
                 StartCrashSequence();
