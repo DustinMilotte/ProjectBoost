@@ -15,6 +15,8 @@ public class Rocket : MonoBehaviour
     public ParticleSystem explosionParticles;
     public ParticleSystem rightsideParticles;
     public ParticleSystem leftsideParticles;
+    public AudioClip successSound;
+    public AudioClip explosionSound;
 
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
@@ -71,6 +73,7 @@ public class Rocket : MonoBehaviour
     private void StartSuccessSequence()
     {
         successParticles.Play();
+        audioSource.PlayOneShot(successSound);
         sequenceHasStarted = true;
         Invoke("LoadNextLevel", levelLoadDelay);
     }
@@ -83,6 +86,7 @@ public class Rocket : MonoBehaviour
     private void StartCrashSequence()
     {
         explosionParticles.Play();
+        audioSource.PlayOneShot(explosionSound);
         sequenceHasStarted = true;
         Invoke("ResetLevel", levelLoadDelay);
     }

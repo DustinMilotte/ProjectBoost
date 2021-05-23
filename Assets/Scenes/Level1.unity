@@ -184,6 +184,8 @@ MonoBehaviour:
   explosionParticles: {fileID: 514608447}
   rightsideParticles: {fileID: 1480319761}
   leftsideParticles: {fileID: 568912640}
+  successSound: {fileID: 8300000, guid: b23dc484e5ab95742b65058abe6236a5, type: 3}
+  explosionSound: {fileID: 8300000, guid: c61592d9466f05441a3be0848d9b771f, type: 3}
 --- !u!54 &110726346
 Rigidbody:
   m_ObjectHideFlags: 0
