@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
     public string levelBaseText;
     public TextMeshProUGUI centerMessage;
     public float messageDisplayTime;
-    
+    public float levelLoadDelay;
+
     void Start()
     {
         // call the display new level function
@@ -35,5 +36,22 @@ public class GameManager : MonoBehaviour
     private void ClearText()
     {
         centerMessage.text = String.Empty;
+    }
+    public void OnCrash()
+    {
+        Invoke("ResetLevel", levelLoadDelay);
+    }
+    public void OnGoalReached()
+    {
+        Invoke("LoadNextLevel", levelLoadDelay);
+    }
+
+    private void LoadNextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+    private void ResetLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

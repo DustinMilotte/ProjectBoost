@@ -9,7 +9,6 @@ public class Rocket : MonoBehaviour
     // This is where we will list the public and private variables for the Rocket class
     public float thrustPower;
     public float turnspeed;
-    public float levelLoadDelay;
     public ColorChanger colorChanger;
     public ParticleSystem successParticles;
     public ParticleSystem explosionParticles;
@@ -75,14 +74,10 @@ public class Rocket : MonoBehaviour
         successParticles.Play();
         audioSource.PlayOneShot(successSound);
         sequenceHasStarted = true;
-        Invoke("LoadNextLevel", levelLoadDelay);
+        
     }
 
-    private void LoadNextLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
+    
     private void StartCrashSequence()
     {
         explosionParticles.Play();
@@ -91,10 +86,7 @@ public class Rocket : MonoBehaviour
         Invoke("ResetLevel", levelLoadDelay);
     }
 
-    private void ResetLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+  
 
     private void Thrust()
     {
