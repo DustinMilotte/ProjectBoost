@@ -74,19 +74,14 @@ public class Rocket : MonoBehaviour
         successParticles.Play();
         audioSource.PlayOneShot(successSound);
         sequenceHasStarted = true;
-        
     }
 
-    
     private void StartCrashSequence()
     {
         explosionParticles.Play();
         audioSource.PlayOneShot(explosionSound);
         sequenceHasStarted = true;
-        Invoke("ResetLevel", levelLoadDelay);
     }
-
-  
 
     private void Thrust()
     {
@@ -111,7 +106,6 @@ public class Rocket : MonoBehaviour
             leftsideParticles.Stop();
             rightsideParticles.Stop();
         }
-
     }
 
     private void Rotate()
