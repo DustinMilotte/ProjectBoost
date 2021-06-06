@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
     {
         Invoke("ResetLevel", levelLoadDelay);
     }
+    
     public void OnGoalReached()
     {
         Invoke("LoadNextLevel", levelLoadDelay);

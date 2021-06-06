@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditorInternal;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
@@ -74,6 +70,8 @@ public class Rocket : MonoBehaviour
         successParticles.Play();
         audioSource.PlayOneShot(successSound);
         sequenceHasStarted = true;
+        // call the method on GameManager
+        
     }
 
     private void StartCrashSequence()
