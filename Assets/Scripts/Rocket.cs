@@ -12,6 +12,8 @@ public class Rocket : MonoBehaviour
     public ParticleSystem leftsideParticles;
     public AudioClip successSound;
     public AudioClip explosionSound;
+    private GameManager gameManager;
+
 
     private Rigidbody christanWoodRigidbody;
     private Vector3 startingPosition;
@@ -22,6 +24,7 @@ public class Rocket : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
         // store the rocket's starting position and rotation so we can reset it if necessary
         startingPosition = transform.position;
         startingRotation = transform.localRotation;
@@ -71,7 +74,7 @@ public class Rocket : MonoBehaviour
         audioSource.PlayOneShot(successSound);
         sequenceHasStarted = true;
         // call the method on GameManager
-        
+        gameManager.OnGoalReached();
     }
 
     private void StartCrashSequence()
@@ -79,6 +82,7 @@ public class Rocket : MonoBehaviour
         explosionParticles.Play();
         audioSource.PlayOneShot(explosionSound);
         sequenceHasStarted = true;
+        gameManager.OnCrash();
     }
 
     private void Thrust()
